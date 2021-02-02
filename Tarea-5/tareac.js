@@ -32,8 +32,8 @@ for (let i = 0; i < numeros.length ; i++) {
         minimo = Number(numeros[i].innerText);
     }
 }
-console.log('Valor mínimo: ' + minimo);
-
+console.log(minimo);
+document.querySelector('#pequeño-final').innerText = minimo;
 }
 
 
@@ -45,7 +45,33 @@ for (let i = 0; i < numeros.length ; i++) {
         maximo = Number(numeros[i].innerText);
     }
 }
-console.log('Valor maximo: ' + maximo);
-        
+
+console.log(maximo);
+document.querySelector('#grande-final').innerText = maximo;  
 }
     
+
+document.querySelector('#numero-mas-frecuente').onclick = function(){
+    let contador = 0;
+    let repeticiones = 1;
+    let numeroMasFrecuente;
+
+
+    for (let i=0; i<numeros.length; i++){
+
+        for (let j=i; j<numeros.length; j++){
+
+            if (Number(numeros[i].innerText) == Number(numeros[j].innerText)) 
+                contador++;
+                    if (repeticiones<contador)
+                    {
+                      repeticiones=contador; 
+                      numeroMasFrecuente = Number(numeros[i].innerText);
+                    }
+            }
+            contador=0;
+    }
+    console.log(numeroMasFrecuente);
+    document.querySelector('#frecuente-final').innerText = numeroMasFrecuente;
+
+}
