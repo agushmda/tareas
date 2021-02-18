@@ -10,7 +10,7 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 document.querySelector('#ejecutar-calculo').onclick = function(){
     const totalGrupoFamiliar = Number(document.querySelector('#total-personas').value);
 
-    for (i=0; i<totalGrupoFamiliar; i++){
+    for (let i=0; i<totalGrupoFamiliar; i++){
         crearIntegrante(i);
     }
 
@@ -21,6 +21,7 @@ document.querySelector('#ejecutar-calculo').onclick = function(){
 document.querySelector('#calcular-edad').onclick = function(){
 
 console.log(calcularPromedio(obtenerEdades()));
+console.log(calcularMayorNumero(obtenerEdades()));
 
 }
 
@@ -29,7 +30,7 @@ console.log(calcularPromedio(obtenerEdades()));
 function obtenerEdades(){
   const edades = document.querySelectorAll('.edades-familia');
   let totalEdades = [];
-  for (i=0; i<edades.length; i++){
+  for (let i=0; i<edades.length; i++){
     totalEdades.push(Number(edades[i].value));
   }
   return totalEdades;
