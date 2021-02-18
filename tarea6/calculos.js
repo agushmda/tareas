@@ -15,3 +15,14 @@ function calcularMayorNumero(array){
     }
     return numeroMayor;
 }
+
+function calcularMenorNumero(array){
+    let numeroMenor = array[0];
+    for (let i=1; i<array.length; i++){
+        if(numeroMenor > array[i]){
+            numeroMenor = array[i];
+        }
+    }
+    return numeroMenor;
+}
+

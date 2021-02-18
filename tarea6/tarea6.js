@@ -22,7 +22,7 @@ document.querySelector('#calcular-edad').onclick = function(){
 
 console.log(calcularPromedio(obtenerEdades()));
 console.log(calcularMayorNumero(obtenerEdades()));
-
+console.log(calcularMenorNumero(obtenerEdades()));
 }
 
 
