@@ -49,7 +49,7 @@ function crearIntegrante(indice) {
     $div.className = 'integrante';
   
     const $label = document.createElement('label');
-    $label.textContent = 'Edad del integrante #: ' + (indice + 1);
+    $label.textContent = 'Edad del integrante: ' + (indice + 1);
     const $input = document.createElement('input');
     $input.type = 'number';
     $input.className = 'edades-familia';
@@ -61,6 +61,7 @@ function crearIntegrante(indice) {
     $integrantes.appendChild($div);
   }
 
+
 /*
 TAREA:
 Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje.
@@ -68,3 +69,25 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente el mayor sala
 
 Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).
 */
+
+
+document.querySelector('#agregar').onclick = function(){
+
+  const $div = document.createElement('div');
+  $div.className = 'salario';
+
+  const $label = document.createElement('label');
+  $label.textContent = 'Salario ' + numero;
+  const $input = document.createElement('input');
+  $input.type = 'number';
+
+  $div.appendChild($label);
+  $div.appendChild($input);
+
+  const $salarios = document.querySelector('#salarios');
+  $salarios.appendChild($div);
+  numero ++;
+  
+
+}
+
