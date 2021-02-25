@@ -23,11 +23,15 @@ document.querySelector('#calcular-edad').onclick = function(){
   document.querySelector('#edad-promedio').innerText = `La edad promedio es ${calcularPromedio(obtenerEdades())}`;
   document.querySelector('#edad-mas-grande').innerText = `La edad mas grande es ${calcularMayorNumero(obtenerEdades())}`;
   document.querySelector('#edad-mas-chica').innerText = `La edad mas chica es ${calcularMenorNumero(obtenerEdades())}`;
-
+  document.querySelector('#sueldo-mayor').innerText = `El mayor sueldo es ${calcularMayorNumero(obtenerSueldos())}`
+  document.querySelector('#sueldo-menor').innerText = `El menor sueldo es ${calcularMenorNumero(obtenerSueldos())}`
+  document.querySelector('#sueldo-promedio').innerText = `El promedio del sueldo es ${calcularPromedio(obtenerSueldos())}`
+  document.querySelector('#sueldo-mensual').innerText = `El promedio del sueldo mensual es ${calcularNumeroMensual(obtenerSueldos())}`
   return false;
 }
 
 document.querySelector('#resetear').onclick = function(){
+  console.log('im in');
   document.querySelector('body').reset();
 }
 
@@ -77,17 +81,26 @@ document.querySelector('#agregar').onclick = function(){
   $div.className = 'salario';
 
   const $label = document.createElement('label');
-  $label.textContent = 'Salario ' + numero;
+  $label.textContent = 'Salario anual ';
   const $input = document.createElement('input');
   $input.type = 'number';
+  $input.className = 'sueldos-familia'
 
   $div.appendChild($label);
   $div.appendChild($input);
 
   const $salarios = document.querySelector('#salarios');
   $salarios.appendChild($div);
-  numero ++;
   
 
+}
+
+function obtenerSueldos(){
+  const sueldos = document.querySelectorAll('.sueldos-familia');
+  let totalSueldos = [];
+  for(i=0; i<sueldos.length; i++){
+    totalSueldos.push(Number(sueldos[i].value));
+  }
+  return totalSueldos;
 }
 
