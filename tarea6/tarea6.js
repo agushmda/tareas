@@ -31,8 +31,7 @@ document.querySelector('#calcular-edad').onclick = function(){
 }
 
 document.querySelector('#resetear').onclick = function(){
-  console.log('im in');
-  document.querySelector('body').reset();
+  document.querySelector('#datos').innerHTML = "";
 }
 
 
@@ -92,6 +91,13 @@ document.querySelector('#agregar').onclick = function(){
   const $salarios = document.querySelector('#salarios');
   $salarios.appendChild($div);
   
+}
+
+document.querySelector('#quitar').onclick = function(){
+  const $salario = document.querySelectorAll('.salario');
+  for (i=0; i<$salario.length; i++){
+    $salario[i].remove();
+  }
 
 }
 
